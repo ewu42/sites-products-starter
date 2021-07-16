@@ -1,13 +1,13 @@
 {
 	"test": "GLOBAL STRING FROM GLOBAL.JSON!!!!!",
-	"name": "Luc's Fashion Warehouse",
+	"name": "Evann's Fashion Warehouse",
 	"primary_color": "#003a70",
 	"secondary_color": "#B5C428",
     "photoGallery": [
 		{
 			"image": {
 			  "url": "/images/bowman.png",
-			  "name": "Bowman"
+			  "name": "Evann"
 			}
 		},
 		{
