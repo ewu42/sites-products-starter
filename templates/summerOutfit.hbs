@@ -9,7 +9,6 @@
         "uid",
         "name",
         "slug",
-        "list",
         "richTextDescription",
         "c_relatedProducts.name",
         "c_relatedProducts.slug",
@@ -91,9 +90,9 @@
     {{#each (sortList list false) }}
             <li> {{this}} </li>
     {{/each}}
-    <div class="section">{{length list}}</div>
-    <div class="section">{{compare list[0] 12}}</div>
-    <div class="section">{{contains list "test"}}</div>
+    <div class="section">{{length c_relatedProducts}}</div>
+    <div class="section">{{compare "test" 12}}</div>
+    <div class="section">{{contains c_relatedProducts "test"}}</div>
 
     </body> 
 
