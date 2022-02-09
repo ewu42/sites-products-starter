@@ -1,14 +1,24 @@
 ---
 {
     "stream": {
-        "$id": "product-categories-2",
+        "$id": "product-categories",
         "source": "knowledgeGraph",
         "destination": "pages",
+      "filter": {
+        "entityTypes": [
+          "ce_productCategory"
+        ]
+      },
       "fields": [
         "id",
         "uid",
         "name",
         "slug",
+        "c_relatedSite.name",
+        "c_relatedSite.c_header",
+        "c_relatedSite.c_footer",
+        "c_relatedSite.c_googleAnalytics",
+        "c_relatedSite.c_APIKeys",
         "richTextDescription",
         "c_relatedProducts.name",
         "c_relatedProducts.slug",
@@ -18,10 +28,8 @@
         "c_relatedProducts.color",
         "c_relatedProducts.richTextDescription"
       ],
-      "filter": {
-        "entityTypes": [
-          "ce_productCategory"
-        ]
+     "localization": {
+         "locales": ["en"]
       }
     },
     "urlFormat": "{{slug}}"
@@ -38,27 +46,22 @@
     <meta name="description" content=Category page for {{name}}.>
     
     {{>head}}
-    {{!-- <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet"> --}}
-    <!--Replace with your tailwind.css once created-->
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
-
-  {{>styles}}
-
 </head>
 
+  <div class="container mx-auto px-4">
     <body>
         
-    {{>navbar}}
+    {{>navbar c_relatedSite}}
 
     <div class="container py-8 px-6 mx-auto">
       <div class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-2xl mb-8">{{name}}</div>
-      <p class="mt-8 mb-8">{{richTextDescription}}</p>
+      <p class="mt-8 mb-8">{{convertRTFToHTML richTextDescription}}</p>
     </div>
-
     {{#each c_relatedProducts}}
       <div class="grid grid-cols-7 divide-gray-300 divide-y-4 gap-3 pl-10">
           <div class="col-span-2">
-              <div class="w-full md:w-full lg:scale-80 p-6 flex flex-col space-y-6">
+              <div class="mb-5">
                   {{>photoGallery photoGallery}}
               </div>
           </div>
@@ -74,7 +77,7 @@
                   <div class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-400 text-xl mb-8">
                       ${{price.value}} 
                   </div>
-                  <p class="mt-8 mb-8 text-l">{{richTextDescription}}</p>
+                  <p class="mt-8 mb-8 text-l">{{convertRTFToHTML richTextDescription}}</p>
                   <p class="mt-8 text-l"><b>Color:</b> {{color}}</p>
               </div>
           </div>
@@ -82,7 +85,8 @@
     {{/each}}
 
     </body> 
+  </div>
 
-{{>footer}}
+{{>footer c_relatedSite}}
 
 </html>

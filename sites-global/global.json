@@ -1,8 +1,6 @@
 {
-	"test": "GLOBAL STRING FROM GLOBAL.JSON!!!!!",
-	"name": "Luc's Fashion Warehouse",
-	"primary_color": "#003a70",
-	"secondary_color": "#B5C428",
+	"name": "Yext's Fashion Warehouse",
+	"photoDemo": "http://a.mktgcdn.com/p-sandbox/Z8gskmlTNNy3gmtaJpBM8UcXKKyTbYH01vQ3tiJOHow/920x1380.jpg",
     "photoGallery": [
 		{
 			"image": {
@@ -13,7 +11,7 @@
 		{
 			"image": {
 			  "url": "/images/breed.jpg",
-			  "name": "BReed"
+			  "name": "Bryan"
 			}
 		},
 		{
@@ -25,13 +23,13 @@
 		{
 			"image": {
 			  "url": "/images/pranjal.jpg",
-			  "name": "Pranjal - Captain Falcon"
+			  "name": "Pranjal"
 			}
 		},
 		{
 		  "image": {
 			"url": "/images/luc.png",
-			"name": "Luc"
+			"name": "Luc "
 		  }
 		},
 		{
